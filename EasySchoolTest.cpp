@@ -55,7 +55,9 @@ to store more than 1 question at a time*/
     {
     srand(time(NULL)); //makes it more random
     fin.close();
+    afin.close();
     std::ifstream fin("questions.txt");
+    std::ifstream afin("answers.txt");
 //we chose the 9 questions and store them in an array
     for(int i=0; i<9; i++) {
         current_random = rand() % nr_of_lines;// 0 to nr of lines
@@ -78,14 +80,13 @@ to store more than 1 question at a time*/
         cout<<line<<endl;
         for (int j=0; j<questions_array[i]; j++)
             afin>>correct_answer;
+//        cout<<correct_answer;
         cin>>student_answer;
         //only if the answers are different we make them both lowercase
-        if (strcmp(student_answer,correct_answer)) {
+        if (strcmp(student_answer,correct_answer))
             LOWER();
             if (strcmp(student_answer,correct_answer)==0)
-                grade++; }
-        else
-            grade++;
+                grade++;
 }
     cout<<"Your grade is "<<grade;
     cin>>line;
