@@ -88,5 +88,6 @@ to store more than 1 question at a time*/
             grade++;
 }
     cout<<"Your grade is "<<grade;
+    cin>>line;
     }
 }
